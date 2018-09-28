@@ -23,18 +23,17 @@ class Home extends Component {
             <img src="./img/rsz-portfolio.jpg" alt="me" className="my-img" />
             <div className="job-description">
               <h2>Software Developer</h2>
-              {/*<p>C# | HTML/CSS | JAVASCRIPT | REACT | MSSQL</p>*/}
               <div className="demo-tabs">
                 <Tabs
                   activeTab={this.state.activeTab}
                   onChange={(e) => this.setState({ activeTab: e })}
                   ripple
                 >
-                  <Tab key="cSharp" style={{ color, "fontSize":size }}>C#</Tab>
-                  <Tab style={{ color, "fontSize":size }}>HTML/CSS</Tab>
-                  <Tab style={{ color, "fontSize":size }}>JAVASCRIPT</Tab>
-                  <Tab style={{ color, "fontSize":size }}>REACT</Tab>
-                  <Tab style={{ color, "fontSize":size }}>MSSQL</Tab>
+                  <Tab style={{ color, "fontSize":size, "width":"100%" }}>C#</Tab>
+                  <Tab style={{ color, "fontSize":size, "width":"100%" }}>HTML/CSS</Tab>
+                  <Tab style={{ color, "fontSize":size, "width":"100%"  }}>JAVASCRIPT</Tab>
+                  <Tab style={{ color, "fontSize":size, "width":"100%" }}>REACT</Tab>
+                  <Tab style={{ color, "fontSize":size, "width":"100%"  }}>MSSQL</Tab>
                 </Tabs>
                 <section>
                   <div className="content">{content[this.state.activeTab]}</div>
