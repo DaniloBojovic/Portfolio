@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Tabs, Tab, Grid, Cell } from "react-mdl";
+import { Tabs, Tab, Grid, Cell, ProgressBar } from "react-mdl";
 
 class Home extends Component {
   constructor(props) {
@@ -9,12 +9,13 @@ class Home extends Component {
   render() {
     let color = 'white';
     let size = '20px';
+    let bar = <ProgressBar className="progress-bar" progress={44}/>
     let content = {
-        0: '7/10',
-        1: '6/10',
-        2: '5/10',
-        3: '2/10',
-        4: '6/10',
+        0: {bar: <ProgressBar className="progress-bar" progress={70}/>, value: '70%'},
+        1: {bar: <ProgressBar className="progress-bar" progress={55}/>, value: '55%'},
+        2: {bar: <ProgressBar className="progress-bar" progress={50}/>, value: '50%'},
+        3: {bar: <ProgressBar className="progress-bar" progress={30}/>, value: '30%'},
+        4: {bar: <ProgressBar className="progress-bar" progress={60}/>, value: '60%'},
     }
     return (
       <div style={{ width: "100%", margin: "auto" }}>
@@ -36,20 +37,21 @@ class Home extends Component {
                   <Tab style={{ color, "fontSize":size, "width":"100%"  }}>MSSQL</Tab>
                 </Tabs>
                 <section>
-                  <div className="content">{content[this.state.activeTab]}</div>
+                    <p className="percent-bar">{content[this.state.activeTab].value}</p>
+                    <div className="content">{content[this.state.activeTab].bar}</div>
                 </section>
               </div>
             </div>
           </Cell>
           <Cell col={12}>
             <div className="links">
-              <a href="https://www.google.rs/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/danilo-bojovic-9a08b3108/" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-linkedin" />
               </a>
-              <a href="https://www.google.rs/" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/DaniloBojovic?tab=repositories" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-github-square" />
               </a>
-              <a href="https://www.google.rs/" target="_blank" rel="noopener noreferrer">
+              <a href="https://codepen.io/DaniloBojovic/" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-codepen" />
               </a>
             </div>
